@@ -33,30 +33,26 @@ while($array = $sql_select->fetch(PDO::FETCH_OBJ)){
     new Vue({
          el: '#app',
             data: {			
-				options: [
+		options: [
                     { nome:'Selecione a Cidade' , value: 0 }
                 ],
-				data: {
-					estado: ''
-				}
+		data: {
+	          estado: ''
+		     }
             },
            methods: {
                 newValue: function(event) {
-					while(this.options.length>1) {
+	            while(this.options.length>1) {
                          this.options.pop();
                      }
-					for(var i = 0; i < arr.length; i++) {
-						if(arr[i][0] == this.estado){
-						   this.options.push({ nome: arr[i][1], id: arr[i][2]});
-						}
-                    }
-					
-                    
-                }
-
+		    for(var i = 0; i < arr.length; i++) {
+			if(arr[i][0] == this.estado){
+		          this.options.push({ nome: arr[i][1], id: arr[i][2]});
+			}
+                    }	   
+		}
             }
-				
-		 });
+	 });
     	
 </script>
 </html>
